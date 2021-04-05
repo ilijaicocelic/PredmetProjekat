@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirlineApi", "AirlineApi\AirlineApi.csproj", "{D4CD4029-B7BD-4248-9B13-774613B980A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarServiceApi", "CarServiceApi\CarServiceApi.csproj", "{450A3ECE-E458-45D4-8CFD-543DD364F90C}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{37AA2709-C327-45A6-84B4-2CBA140D80DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D4CD4029-B7BD-4248-9B13-774613B980A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4CD4029-B7BD-4248-9B13-774613B980A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4CD4029-B7BD-4248-9B13-774613B980A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4CD4029-B7BD-4248-9B13-774613B980A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450A3ECE-E458-45D4-8CFD-543DD364F90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450A3ECE-E458-45D4-8CFD-543DD364F90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450A3ECE-E458-45D4-8CFD-543DD364F90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450A3ECE-E458-45D4-8CFD-543DD364F90C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37AA2709-C327-45A6-84B4-2CBA140D80DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37AA2709-C327-45A6-84B4-2CBA140D80DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37AA2709-C327-45A6-84B4-2CBA140D80DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37AA2709-C327-45A6-84B4-2CBA140D80DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B600AA38-D724-4FCC-8815-0463454CA427}
+	EndGlobalSection
+EndGlobal

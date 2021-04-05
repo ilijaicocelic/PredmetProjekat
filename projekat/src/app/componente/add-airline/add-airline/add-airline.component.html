@@ -1,0 +1,32 @@
+<app-nav-menu></app-nav-menu>
+<div  class="sectiondiv">
+<div class="container">  
+  <form id="contact" action="" method="post">
+    <h3 class ="header"> New Airline</h3>
+    <br>
+    <fieldset>
+      <input type="text" [(ngModel)]="username" name="username"  placeholder="Username of admin..."  tabindex="1" required autofocus>
+    </fieldset>
+
+    <fieldset>
+      <input type="text" [(ngModel)]="name" name="name"  placeholder="Name of the new airline..."  tabindex="2" required autofocus>
+    </fieldset>
+    <fieldset>
+      <input type="text"  [(ngModel)] ="address" name="address"  placeholder="Addres of the airline..."  tabindex="3" required>
+    </fieldset>
+
+    <fieldset>
+      <input type="email"  [(ngModel)] ="email" name="email"  placeholder="email..."  tabindex="4" required>
+    </fieldset>
+    
+    
+    <fieldset>
+      <textarea   type ="text" [(ngModel)] = "description" name="description" placeholder="Description ...." tabindex="5" required></textarea>
+    </fieldset>
+    <fieldset>
+      <button name="onSubmit"  type="submit" (click) ="onSubmit()"  data-submit="...Sending">Submit</button>
+    </fieldset>
+   
+  </form>
+</div>
+</div>

@@ -1,0 +1,31 @@
+<app-nav-menu></app-nav-menu>
+
+<div class="mainDiv">
+    <h5  class="booking-cta">Infos about airline flights</h5>
+    <table  class="table table-hover" >
+        <thead>
+            <tr>
+                <th class="th-info">Depart:</th>
+                <th class="th-info">Landing:</th>
+                <th class="th-info">Number of stops:</th>
+                <th class="th-info">Duration:</th>
+                <th class="th-info">Ticket price:</th>
+                <th></th>
+                
+        
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let flight of Flights">
+                <td class="td-info">{{flight.flyingfrom}} <br> {{flight.dateDepart | date:'dd-MM-yyyy HH:mm' }}</td>
+                <td class="td-info"> {{flight.flyingTo}} <br> {{flight.dateArrival | date:'dd-MM-yyyy HH:mm' }}</td>
+                <td class="td-info"> {{flight.numberTransit}} </td>
+                <td class="td-info"> h:m:s <br> {{flight.flightDuration | date: "H:m:s" }} </td>
+                <td class="td-info">
+                    <span class="price-text">{{flight.ticketPrice}}€</span> 
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>

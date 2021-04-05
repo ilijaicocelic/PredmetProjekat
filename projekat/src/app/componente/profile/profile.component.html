@@ -1,0 +1,114 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<!-- <app-nav-menu [userID]="id"></app-nav-menu> -->
+
+<app-nav-menu></app-nav-menu>
+<div  class="sectiondiv">
+  <div>
+    <form >
+      <div class="row">
+         <h3 class="th-info">Personal info</h3>
+      </div>
+      <div class="row">
+
+        
+        <div class="col-md-6">
+          <img src="../../../../assets/images/avatar.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="col-md-6" style="margin-top: 4%;">
+
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label">First name *:</label>
+            </div>
+            <div class="col-md-5">
+              <input [(ngModel)]="name" class="input" type="text" name="name" >
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label">Last name *:</label>
+            </div>
+            <div class="col-md-5">
+              <input [(ngModel)]="surname" class="input" type="text" name="surname">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label">Phone Number *:</label>
+            </div>
+            <div class="col-md-5">
+              <input  [(ngModel)]="phoneNumber" class="input" type="tel" name="phoneNumber">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label">Address *:</label>
+            </div>
+            <div class="col-md-5">
+              <input  [(ngModel)]="address" class="input" type="tel" name="address">
+            </div>
+          </div>
+       
+
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label">Change password:</label>
+            </div>
+            <div class="col-md-5">
+              <input class="checkBox"  [(ngModel)]="checkBox"  type="checkbox" name="checkBox">
+            </div>
+          </div>
+
+          <div class="row" [hidden]="checkBox == false" >
+      
+
+
+            <div class="row">
+              <div class="col-md-4">
+                <label class="label">Current password *:</label>
+              </div>
+              <div class="col-md-5">
+                <input [(ngModel)]="currentPassword" class="input" type="password" name="currentPassword">
+              </div>
+            </div>
+
+
+
+            <div class="row">
+              <div class="col-md-4">
+                <label class="label">Password *:</label>
+              </div>
+              <div class="col-md-5">
+                <input [(ngModel)]="newpassword" class="input" type="password" name="newpassword">
+              </div>
+            </div>
+  
+            <div class="row">
+              <div class="col-md-4">
+                <label class="label">Confirm password *:</label>
+              </div>
+              <div class="col-md-5">
+                <input  [(ngModel)]="confirmpassword" class="input" type="password" name="confirmpassword">
+              </div>
+            </div>
+          </div>
+
+          
+
+          <div class="row">
+            <div class="col-md-9">
+            <button type="submit" class="buttonAccept" (click)="saveChanges()" >Save Changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

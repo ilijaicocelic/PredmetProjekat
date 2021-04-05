@@ -1,0 +1,73 @@
+.innerContainer {
+    color: rgb(37, 80, 223);
+    text-align: center;
+    width: 100%;
+}
+.header {
+    margin: -10px -5px 10px -5px;
+    height: 90px;
+    background: hsla(216, 81%, 53%, 0.65);   
+}
+
+.headerTitle {
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 10px;
+    margin-top: -3px;
+}
+.seat {
+    padding-right: 5px;
+   
+}
+
+.legend {
+    font-size: 14px;
+}
+.legend > .padding-left {
+    padding-left: 15px;
+}
+.screen {
+    background: hsla(216, 72%, 50%, 0.65);
+    height: 3px;
+    border-radius: 15px;
+    margin: -5px 50px 10px;
+    box-shadow: 0px 3px 6px #fff;
+}
+.reservedSeat {
+    color:#f54242;
+    font-size: 50px;
+}
+.selectedSeat {
+    color:#60f542;
+    font-size: 50px;
+}
+.freeSeat {
+    color: #4287f5;
+    font-size: 50px;
+   
+}
+.btnClear{
+    background-color: rgb(255, 0, 0);
+    color: black;
+    font-weight: bold;
+    border-color: black;
+    margin-right: 58%;
+    margin-left: 0%;
+    height: 30px;
+    width: 100px;
+}
+.btnBuy{
+    background-color: rgb(8, 245, 0);
+    color: black;
+    font-weight: bold;
+    border-color: black;
+    
+    height: 30px;
+    width: 100px;
+}
+
+.rows{
+    color: #4287f5;
+    font-size: 30px;
+}
+

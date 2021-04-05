@@ -1,0 +1,116 @@
+
+<body>		
+
+<app-nav-menu></app-nav-menu> 
+	
+	
+
+<div id="booking" class="section">
+	<div class="section-center">
+		<div class="container">
+			<div class="row">
+				<div class="booking-cta">
+					<h1>Book your flight today!</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div>
+					<div class="booking-form">
+						<form>
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="form-group">
+										<span class="form-label">Flying from</span>
+										<input class="form-control" name="flyingfrom" [(ngModel)]="flyingfrom" type="text" placeholder="City or airport">
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<span class="form-label">Flyning to</span>
+										<input class="form-control" [(ngModel)]="flyingTo" name="flyingTo" type="text" placeholder="City or airport">
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<span class="form-label">Adults (18+)</span>
+										<select name="adults" class="form-control" [(ngModel)]="adults" >
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<span class="form-label">Way</span>
+										<select name="way" class="form-control" [(ngModel)]="way">
+											<option  value="Round Trip">Round Trip</option>
+											<option value="One way">One way</option>
+											<option  value="Multi-City">Multi-City</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-sm-3">
+									<div class="form-group">
+										<span class="form-label">Departing</span>
+										<input name="dateDepart" [(ngModel)]="dateDepart" value={{DateNow}} min={{DateNow}} class="form-control" type="date" required>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<div [hidden]="way != 'Round Trip'">
+											<span class="form-label">Returning</span>
+											<input name="dateReturn" [(ngModel)]="dateReturn" min={{dateDepart}} class="form-control" type="date" required>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-3">
+									<div class="form-group">
+										<span class="form-label">Children (0-17)</span>
+										<select name="children" class="form-control" [(ngModel)]="children">
+											<option value="0">0</option>
+											<option  value="1">1</option>
+											<option  value="2">2</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								
+								<div class="col-sm-3">
+									<div class="form-group">
+										<span class="form-label">Class</span>
+										<select name="clas" class="form-control" [(ngModel)]="clas">
+											<option value="Economy class">Economy class</option>
+											<option  value="Business class">Business class</option>
+											<option  value="First class">First class</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-btn">
+								<button class="submit-btn"  (click)="filterFlights()" >Show flights</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+			
+			<div class="flyghts-table" *ngIf = "test == true">
+				<app-flyghts-table [Flights]="Flights"></app-flyghts-table>
+			</div>
+			<div  style="background:  #cce0ff" [hidden]="Flights.length !== 0 || SearchButtonClicket == 0">
+				<h5 style="font-size: 16px; color:  #0066ff; opacity: 90%; font-weight: 100; text-align: center;">Currently there are no flights.</h5>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+
+</body>

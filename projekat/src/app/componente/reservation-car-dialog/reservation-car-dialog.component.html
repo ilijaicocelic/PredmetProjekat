@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans:400" rel="stylesheet">
+  </head>
+  <body>
+
+    
+    <div class="profile-card">
+        <div class="main-container">
+            <p style="float: right; margin-right: 50px;"><i style="color:yellow;" class="fas fa-star info"></i>Average grade: </p>
+            <br>
+            <hr>
+            
+            <p><i class="fas fa-calendar-alt info"></i>Location : {{car.location}}</p>
+            <p><i class="fas fa-car info"></i>Brand: {{car.brand}} </p>
+            <p><i class="far fa-calendar-alt info"></i>Year: {{car.year}} </p>   
+            <p><i class="fas fa-dollar-sign info"></i>Price per day: {{car.pricePerDay}}</p>
+            <p><i class="fas fa-clock info"></i>Pick up date:<input name="DayOfReservation" [(ngModel)]="DayOfReservation" min={{currentDate}} max={{ReturnDate}}  type="date" ></p>
+        <p><i class="fas fa-clock info"></i>Return date:<input (change) = "CalculateDay()" name="ReturnDate" [(ngModel)]="ReturnDate" min={{DayOfReservation}} type="date" ></p>
+        <p><i class="fas fa-dollar-sign info"></i>Total price: {{car.pricePerDay*numberOfDays}}</p>
+        <hr>
+            <br>
+           
+            <div class = "row">
+                <div class = "col-md-6">
+                    <button class="buttonModify"  (click) = "Reserve()"  type="button">Reserve</button>
+                </div>  
+                <div class = "col-md-6">
+                    <button class="buttonRemove"  (click) = "Cancel()" type="button">Cancel</button>
+                </div>    
+                            
+            </div>
+            
+        </div>
+    </div>
+    </body>
+    </html>

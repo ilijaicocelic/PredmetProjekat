@@ -1,0 +1,31 @@
+<div>
+    <app-nav-menu></app-nav-menu> 
+</div>  
+
+<div class = "mainDiv">
+    <div class="header">
+        <div class="headerTitle"> FAST RESERVATIONS </div>
+    </div>
+<div class="col-md-6">
+    <table  class="table table-hover">
+        <thead>
+                <tr>
+                    <th class="th-info">Location and Price:</th>
+                    <th class="th-info">Pickup and return date: </th>
+                    <th class="th-info">Brand and model:</th>
+                    <th class="th-info" >Price:</th>
+                    <th></th>
+                </tr>
+        </thead>
+        <tbody *ngIf="allReservations.length > 0">
+            <tr  *ngFor="let ReservedCar of allReservations"  style="text-align: center; vertical-align: middle;">
+                <td  class="td">{{ReservedCar.car.location}} <br> {{ReservedCar.totalPrice}} $ </td>
+                <td  class="td"> {{ReservedCar.checkedInDate | date:'dd/MM/yyyy' }} <br> {{ReservedCar.checkedOutDate | date:'dd/MM/yyyy' }}</td>
+                <td  class="td"> {{ReservedCar.car.brand}} <br> {{ReservedCar.car.model}} </td>   
+                <td class="td"> <s>{{ReservedCar.totalPrice}}</s> {{ReservedCar.totalPrice - (ReservedCar.discount* ReservedCar.totalPrice)/100}}</td>                       
+                <td> <button (click) = "Reserve(ReservedCar.id)"> Reserve</button> </td>
+            </tr>
+        </tbody> 
+    </table>
+</div>
+</div>

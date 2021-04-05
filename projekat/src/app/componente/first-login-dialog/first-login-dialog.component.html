@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-4">
+      <label class="label">Current password *:</label>
+    </div>
+    <div class="col-md-5">
+      <input [(ngModel)]="currentPassword" class="input" type="password" name="currentPassword">
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-md-4">
+      <label class="label">Password *:</label>
+    </div>
+    <div class="col-md-5">
+      <input [(ngModel)]="newpassword" class="input" type="password" name="newpassword">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+      <label class="label">Confirm password *:</label>
+    </div>
+    <div class="col-md-5">
+      <input  [(ngModel)]="confirmpassword" class="input" type="password" name="confirmpassword">
+    </div>
+  </div>
+
+
+<div class="row">
+    <div class="col-md-9">
+    <button type="submit" class="buttonAccept" (click)="SaveChanges()" >Save Changes</button>
+    </div>
+  </div>

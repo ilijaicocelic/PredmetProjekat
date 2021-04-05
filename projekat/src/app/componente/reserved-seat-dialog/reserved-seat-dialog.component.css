@@ -1,0 +1,220 @@
+
+* {box-sizing: border-box}
+  .container {
+    padding: 16px;
+    background-color: rgb(37, 80, 223);
+    width: 700px;
+    height: 300px;
+  }
+  .divLabel{
+    width: 50px;
+  }
+  .label{
+    color: black;
+    font-size: 16px;
+    margin-left: 0%;
+  }
+
+  .table-wrap {
+    height: 200px;
+    overflow-y: scroll;
+  }
+  .divCol{
+    margin-bottom: 5%;
+  }
+
+  .input{
+    color: black;
+    background-color: white;
+    width: 100%;
+  }
+  
+tr:nth-child(even) {background-color:#a5c6fa;}
+
+.table{
+	 width: 100%;
+   margin-left: 5px;
+   background-color:  #ccdffd;
+   border:1px
+   
+}
+
+
+tr{
+  border: solid thin;
+  height: 40px;
+  
+}
+h2{
+  text-align: center;
+}
+
+.td{
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  height: 40px;
+}
+
+
+.buttonMyData {
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  width:100%;
+  height: 40px;
+  margin-left: 0%;
+  margin-top: 7%;
+}
+.buttonMyData:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0cf;
+  border-radius: 10rem;
+  z-index: -2;
+}
+.buttonMyData:before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #008fb3;
+  transition: all .3s;
+  border-radius: 10rem;
+  z-index: -1;
+}
+.buttonMyData:hover {
+  color: #fff;
+}
+.buttonMyData:hover:before {
+  width: 100%;
+}
+  
+  .buttonModify {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 140px;
+    height: 45px;
+    margin-left: 55%;
+  }
+  .buttonModify:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0cf;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .buttonModify:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #008fb3;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .buttonModify:hover {
+    color: #fff;
+  }
+  .buttonModify:hover:before {
+    width: 100%;
+  }
+
+
+
+  .buttonRemove {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 140px;
+    height: 45px;
+    margin-left: 2%;
+  }
+  .buttonRemove:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 100, 100);
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .buttonRemove:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #ce2020;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .buttonRemove:hover {
+    color: #fff;
+  }
+  .buttonRemove:hover:before {
+    width: 100%;
+  }
+
+  .or {
+    width: 40px;
+    height: 40px;
+    background: #DDD;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    line-height: 40px;
+    text-align: center;
+    margin-left: 45%;
+  }
+  .divOr{
+    width: 40px;
+    height: 40px;
+    background: #DDD;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    line-height: 40px;
+    text-align: center;
+    margin-top: 90%;
+  }

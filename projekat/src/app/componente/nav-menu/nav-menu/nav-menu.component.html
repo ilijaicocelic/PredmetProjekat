@@ -1,0 +1,22 @@
+<div class="topnav">
+  <a style="float: left;"  [hidden]="userRole == 'SystemAdmin' || userRole == 'CarAdmin' || userRole == 'AirlineAdmin'" routerLink ="/airline">FLIGHT</a>
+  <a style="float: left;"  [hidden]="userRole == 'SystemAdmin' || userRole == 'CarAdmin' || userRole == 'AirlineAdmin'" routerLink ="/rent-a-car" >CAR</a>
+
+  <a style="float: left;"  [hidden]="userRole== 'SystemAdmin' || userRole == 'AirlineAdmin' || userRole == 'CarAdmin'" routerLink ="/airline-table">AIRLINES</a>
+  <a style="float: left;"  [hidden]="userRole== 'SystemAdmin' || userRole == 'AirlineAdmin' || userRole== 'CarAdmin'" routerLink ="/rent-a-car-table" >CAR COMPANIES</a>
+
+  <a style="float: left;"  [hidden]="userRole== 'SystemAdmin' || userRole == 'AirlineAdmin' || userRole== 'CarAdmin' || userRole == 'NonRegistred'" routerLink ="/friends">FRIENDS</a>
+  <a style="float: left;"  [hidden]="userRole == 'NonRegistred'" routerLink ="/profile">PROFILE</a>
+  <a style="float: left;"  [hidden]="userRole == 'SystemAdmin' || userRole == 'CarAdmin' || userRole == 'AirlineAdmin' || userRole == 'NonRegistred'" routerLink ="/history-of-reservation">RESERVATIONS</a>
+  <a style="float: left;"  [hidden]="userRole == 'SystemAdmin' || userRole == 'CarAdmin' || userRole == 'AirlineAdmin' || userRole == 'NonRegistred'" routerLink ="/fast-car-res">FAST CAR RESERVATIONS</a>
+
+  <a style="float: right;" [hidden]="userRole == 'NonRegistred'" (click) = "Logout()" routerLink="">LOGOUT </a>
+  <a style="float: right;" [hidden]="userRole == 'SystemAdmin' || userRole == 'CarAdmin' || userRole == 'AirlineAdmin' || userRole == 'Registred'" routerLink ="/sign-in">SING IN</a>
+  <a style="float: right;" [hidden]="userRole == 'SystemAdmin' || userRole == 'CarAdmin' || userRole == 'AirlineAdmin' || userRole == 'Registred'" routerLink ="/sign-up">SING UP</a>
+  <a style="float: right;" [hidden]="userRole == 'Registred' || userRole == 'CarAdmin' || userRole == 'AirlineAdmin' || userRole == 'NonRegistred'" routerLink ="/all-rc-servis">CAR COMPANIES</a>
+  <a style="float: right;" [hidden]="userRole == 'Registred' || userRole == 'CarAdmin' || userRole == 'AirlineAdmin' || userRole == 'NonRegistred'" routerLink ="/all-airline"> AIRLINES</a>
+  <a style="float: right;" [hidden]="userRole == 'Registred' || userRole == 'AirlineAdmin' || userRole == 'SystemAdmin' || userRole == 'NonRegistred'" routerLink ="/myRCservis"> SERVICE INFO</a>
+  <a style="float: right;" [hidden]="userRole == 'Registred' || userRole == 'AirlineAdmin' || userRole == 'SystemAdmin' || userRole == 'NonRegistred'" routerLink ="/myCarList"> LIST OF CARS</a>
+  <a style="float: right;" [hidden]="userRole == 'Registred' || userRole == 'CarAdmin' || userRole == 'SystemAdmin' || userRole == 'NonRegistred'" routerLink ="/myAirLineService"> SERVICE INFO</a>
+  <a style="float: right;" [hidden]="userRole == 'Registred' || userRole == 'CarAdmin' || userRole == 'SystemAdmin' || userRole == 'NonRegistred'" routerLink ="/myFlightList"> LIST OF FLIGHT</a>
+</div> 

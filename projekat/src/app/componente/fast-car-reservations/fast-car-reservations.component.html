@@ -1,0 +1,31 @@
+<div>
+    <app-nav-menu></app-nav-menu> 
+</div>  
+
+
+<div class="mainDiv">
+    <div class="Div">
+        <div class="row">
+            <div class="form-group">
+                <span class="form-label">Check In</span>
+                <input class="form-control" type="date" [(ngModel)] = "firstDate" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group">
+                <span class="form-label">Check out</span>
+                <input class="form-control" type="date"  [(ngModel)] = "secondDate" required>
+            </div>
+        </div>
+
+        <div class="booking-ctar">
+            <label for="rrange" style="display: inline-block;">Discount:</label>&nbsp;
+            <label id="discount" for="rrange" style="display: inline-block;">0</label>
+            <input style="width: 100%;display: block;" id="rrange" type="range" class="rang" value={{discount}} min="0" max="100"
+            (input)="ChangeText($event.target.value)"/>
+
+        </div>
+
+        <button  type="button" (click)="AddFastReservation()">Make Fast Reservation</button>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<h2 mat-dialog-title >Podaci o korisniku za koga se sediste rezervse</h2>
+
+<mat-dialog-content>
+<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+            <h2>Insert data:</h2>
+            </div>
+            <div class="col-md-6">
+                <h2>Invite friend:</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <div class="row">
+                    <div class="row">
+                        <div class="col-md-4 divCol">
+                            <label class="label">Ime:</label>
+                        </div>
+                        <div class="col-md-8 divCol">
+                            <input class="input" type="text" [(ngModel)]="name" name="name"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 divCol">
+                            <label class="label">Prezime:</label>
+                        </div>
+                        <div class="col-md-8 divCol">
+                           <input class="input" type="text"  [(ngModel)]="surname" name="surname"  />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 divCol">
+                            <label class="label">Broj Pasosa:</label>
+                        </div>
+                        <div class="col-md-8">
+                            <input class="input" type="text"  [(ngModel)]="passportNumber" name="passportNumber" />
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="or">OR</div>
+                <div class="row" >
+                    <button mat-button class="buttonMyData" (click)="myData()">Use my data for this seat</button>
+                </div>
+            
+            </div>
+            <div class="col-md-1" style="margin-top: 8%;" >
+               <div class="divOr">OR</div> 
+            </div>
+            <div class="col-md-6">
+                <div class="table-wrap" >
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr *ngFor="let friend of user.friends"  >
+                                <td class="td">{{friend.name}}</td>
+                                <td class="td">{{friend.surname}}</td>
+                                <td class="td">
+                                <button mat-raised-button  (click) ="inviteFriend(friend)" style="background:rgb(8, 245, 0);; border-color: gray; height:30px;">
+                                    Invite
+                                </button>
+                                </td>
+                                <br/>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>  
+            </div>
+        </div>
+      
+</div>
+   
+</mat-dialog-content>
+<br/>
+<br/>
+<mat-dialog-actions>
+ <button mat-button class="buttonRemove" (click)="cancel()">Cancel</button>
+ <button mat-raised-button class="buttonModify" (click)="save()">Save</button>
+</mat-dialog-actions>

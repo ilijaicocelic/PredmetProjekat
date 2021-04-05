@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   
+
+	<body>
+		
+		<app-nav-menu></app-nav-menu> 
+		
+		<div id="booking" class="section">
+			<div class="section-center">
+				<div class="container">
+					<div class="row">
+						<div class="booking-cta">
+							<h1>Make Your Reservation</h1>
+						</div>
+						<div class="booking-form">
+							<form>
+								<div class="col-md-8">
+									<div class="form-group">
+										<span class="form-label">Destination</span>
+										<input class="form-control" name="pickUpLocation" [(ngModel)] ="pickUpLocation" type="text" placeholder="Enter Address, city or airport">
+									</div>
+								</div>
+								
+								<div class="col-md-2">
+									<div class="form-group">
+										<span  class="form-label">Baby seats</span>
+										<select class="form-control" name = "Babyseats" [(ngModel)] = "Babyseats">
+											
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+
+								<div class="col-md-2">
+									<div class="form-group">
+										<span  class="form-label">Seats:</span>
+										<select class="form-control" name = "seats" [(ngModel)] = "seats">
+											<option>0</option>
+											<option>1</option>
+											<option>2</option>
+											<option>3</option>
+											<option>4</option>
+											<option>5</option>
+										</select>
+										<span class="select-arrow"></span>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="form-group">
+										<span class="form-label">Check In</span>
+										<input class="form-control" type="date" [(ngModel)] = "pickUpDate" required>
+									</div>
+								</div>
+								
+								<div class="col-md-4">
+									<div class="form-btn">
+										<button class="submit-btn" (click)="CheckCars()">Check available cars</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					
+					<div  *ngIf = "test == true" >
+						<app-car-table [Cars] ="Cars"></app-car-table>
+					</div>
+					<div [hidden]="Cars.length !== 0 || ClickedToCheck == 0">
+						<h5 style="font-size: 26px; color:white; font-weight: 100; text-align: center;">Currently there are no cars.</h5>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		
+	</body>

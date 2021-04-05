@@ -1,0 +1,43 @@
+services:
+  airlineapi:
+    build:
+      context: C:\Users\icoce\Desktop\Bekend
+      dockerfile: AirlineApi/Dockerfile
+    depends_on:
+      mysql-server:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: airlineapi
+    ports:
+    - published: 5002
+      target: 80
+    - target: 80
+  carserviceapi:
+    build:
+      context: C:\Users\icoce\Desktop\Bekend
+      dockerfile: CarServiceApi/Dockerfile
+    depends_on:
+      mysql-server:
+        condition: service_started
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: carserviceapi
+    ports:
+    - published: 5001
+      target: 80
+    - target: 80
+  mysql-server:
+    environment:
+      MYSQL_PASSWORD: UserPassword!123
+      MYSQL_ROOT_PASSWORD: DatabasePassword!123
+      MYSQL_USER: user
+    image: mysql/mysql-server:5.6
+    ports:
+    - published: 3306
+      target: 3306
+    volumes:
+    - database:/var/lib/mysql:rw
+version: '3.4'
+volumes:
+  database: {}

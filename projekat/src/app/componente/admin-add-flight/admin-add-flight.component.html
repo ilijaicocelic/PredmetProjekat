@@ -1,0 +1,64 @@
+<app-nav-menu></app-nav-menu>
+
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-6">
+          <label><b>Flying from:</b></label>
+          <input [(ngModel)]="FlyingFrom" type="text" name="FlyingFrom" placeholder="Flying from"  required>
+        </div>
+        <div class="col-md-6">
+          <label><b>Flying to:</b></label>
+          <input [(ngModel)]="FlyingTo" type="text" name="FlyingTo" placeholder="Flying to"  required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label><b>Date and time of departure:</b></label>
+          <input [(ngModel)]="DateDepart" type="datetime-local" min={{DateNow}} max={{DateArrival}} name="DateDepart" required>
+        </div>
+        <div class="col-md-6">
+          <label><b>Landing date and time:</b></label>
+          <input [(ngModel)]="DateArrival" type="datetime-local" min={{DateDepart}} name="DateArrival" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <label><b>First stop</b></label>
+            <input [(ngModel)]="FirstStop" placeholder="First stop" name="FirstStop" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label><b>Second stop</b></label>
+            <input [(ngModel)]="SecondStop" placeholder="Second stop" name="SecondStop" type="text">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label><b>Third stop</b></label>
+            <input [(ngModel)]="ThirdStop" placeholder="Third stop" name="ThirdStop" type="text">
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <label><b>Flight length in Km:</b></label>
+          <input [(ngModel)]="FlightLength" placeholder="Flight length in Km" name="FlightLength" type="number" required>
+        </div>
+        <div class="col-md-3">
+          <label><b>Price per one ticket:</b></label>
+          <input [(ngModel)]="TicketPrice" placeholder="Price per ticket (in €)" name="TicketPrice" type="number" required>
+        </div>
+        <div class="col-md-6">
+          <br>
+          <button type="submit" class="registerbtn" (click) = "AddNewFlight()">Submit</button>
+        </div>
+      </div>
+      
+    </div>
+  

@@ -1,0 +1,138 @@
+
+
+<script src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2.4.1/webcomponents-bundle.min.js"></script>
+<div>
+    <app-nav-menu></app-nav-menu> 
+</div>  
+
+<div class="header">
+    <div class="headerTitle">YOUR RESERVATIONS </div>
+</div>
+
+<div class="mainDiv">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="headerTitle2">YOUR FLIGHT RESERVATIONS </div>
+        </div>
+        <div class="col-md-6">
+            <div class="headerTitle2">YOUR CAR RESERVATIONS </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table  class="table table-hover">
+                <thead>
+                    <tr style="height: 94px;">
+                        <th class="th-info">Depart:</th>
+                        <th class="th-info" >Landing:</th>
+                        <th class="th-info">Transit:</th>
+                        <th class="th-info">Duration: <br> HH:mm:ss </th>
+                        <th class="th-info">No of reserved <br> seats:</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="flightReservations.length > 0">
+                    <tr  *ngFor="let Reservedflight of flightReservations">
+                        <td class="td">{{Reservedflight.flight.flyingfrom}} <br> {{Reservedflight.flight.dateDepart | date:'dd/MM/yyyy HH:mm' }}</td>
+                        <td class="td"> {{Reservedflight.flight.flyingTo}} <br> {{Reservedflight.flight.dateArrival | date:'dd/MM/yyyy HH:mm' }}</td>
+                        <td class="td"> {{Reservedflight.flight.numberTransit}} </td>
+                        <td class="td"> {{Reservedflight.flight.flightDuration | date: "HH:mm:ss" }} </td>
+                        <td class="td"> {{Reservedflight.numberOfReservedSeats}} </td>
+                        <td *ngIf="!Reservedflight.flight.CancellingIsOver">
+                            Total Price:<span class="price-text">{{Reservedflight.flight.ticketPrice*Reservedflight.numberOfReservedSeats}}€</span> <br/>
+                            <button  class="buttonCancellations" (click)="buttonCancellations(Reservedflight.flight)">Cancellations</button>
+                        </td>
+
+                        <td *ngIf="Reservedflight.flight.CancellingIsOver && !Reservedflight.flight.isOver">
+                            <label style="width:180px;"> Ocenjivanje ce biti moguce nakon zavrsetka leta!</label>
+                        </td>
+
+                        <td *ngIf="Reservedflight.flight.isOver && Reservedflight.mark == 0" >
+                            <span class="td"> Rate this flight: </span> <br>
+                            <star-rating value=0 totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="false" (rate)="rateFlight($event,Reservedflight.flight)"></star-rating>
+                        </td>
+                        <td *ngIf="Reservedflight.flight.isOver && Reservedflight.mark != 0" >
+                            <span class="td"> Your rate for this flight: </span> <br>
+                            <star-rating value={{Reservedflight.mark}} totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="true"></star-rating>
+                        </td>
+                    </tr>
+                </tbody> 
+                <tbody *ngIf="flightReservationsRequests.length > 0">
+                    <tr *ngFor="let Requestsflight of flightReservationsRequests">
+                        <td class="td">{{Requestsflight.flight.flyingfrom}} <br> {{Requestsflight.flight.dateDepart | date:'dd/MM/yyyy HH:mm' }}</td>
+                        <td class="td"> {{Requestsflight.flight.flyingTo}} <br> {{Requestsflight.flight.dateArrival | date:'dd/MM/yyyy HH:mm' }}</td>
+                        <td class="td"> {{Requestsflight.flight.numberTransit}} </td>
+                        <td class="td"> {{Requestsflight.flight.flightDuration | date: "HH:mm:ss" }} </td>
+                        <td class="td"> {{Requestsflight.numberOfReservedSeats}} </td>
+                        <td *ngIf="Requestsflight.status == 1 &&  !Requestsflight.flight.CancellingIsOver" >
+                            <span class="td"> Friend pay this! </span> <br>
+                            <button  class="buttonAccept"  (click)="buttonAccept(Requestsflight.flight)">
+                                Accept
+                            </button>
+                            <button  class="buttonReject"  (click)="buttonReject(Requestsflight.flight)">
+                                Reject
+                            </button>
+                        </td>
+                        <td *ngIf="Requestsflight.status == 0 && !Requestsflight.flight.CancellingIsOver" >
+                            <span class="td"> Friend pay this! </span> <br>
+                            <button class="buttonCancellations" (click)="buttonReject(Requestsflight.flight)">Cancellations</button>
+                        </td>
+                        <td *ngIf="Requestsflight.flight.CancellingIsOver && !Requestsflight.flight.isOver">
+                            <label style="width: 180px;"> Ocenjivanje ce biti moguce nakon zavrsetka leta!</label>
+                        </td>
+                        
+
+                        <td class="rateTd" *ngIf="Requestsflight.flight.isOver && Requestsflight.mark == 0">
+                            <span class="td"> Rate this flight: </span> <br>
+                            <star-rating value=0 totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="false" (rate)="rateFlight($event, Requestsflight.flight)"></star-rating>
+                        </td>
+                        <td class="rateTd" *ngIf="Requestsflight.flight.isOver && Requestsflight.mark != 0" >
+                            <span class="td">  Your rate for this flight: </span> <br>
+                            <star-rating value={{Requestsflight.mark}} totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="true"></star-rating>
+                        </td>
+
+                   </tr>
+                </tbody> 
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table  class="table table-hover">
+                <thead>
+                        <tr>
+                            <th class="th-info">Location and Price:</th>
+                            <th class="th-info">Pickup and return date: </th>
+                            
+                            <th class="th-info">Brand and model:</th>
+                            <th class="th-info" ></th>
+                            
+                        </tr>
+                
+                </thead>
+                <tbody *ngIf="allReservations.length > 0">
+                    <tr  *ngFor="let ReservedCar of allReservations"  style="text-align: center; vertical-align: middle;">
+                        <td  class="td">{{ReservedCar.car.location}} <br> {{ReservedCar.totalPrice}} $ </td>
+                        <td  class="td"> {{ReservedCar.checkedInDate | date:'dd/MM/yyyy' }} <br> {{ReservedCar.checkedOutDate | date:'dd/MM/yyyy' }}</td>
+                        <td  class="td"> {{ReservedCar.car.brand}} <br> {{ReservedCar.car.model}} </td>             
+                        <td *ngIf="!ReservedCar.CancellingIsOver">
+                             <button class="buttonCancellations" (click)="buttonCancellationsCarReservation(ReservedCar)">Cancellations</button>
+                        </td>
+                        <td *ngIf="ReservedCar.CancellingIsOver && !ReservedCar.isOver">
+                           <label style="width: 200px;"> Ocenjivanje ce biti moguce nakon vracanja automobila!</label>
+                       </td>
+                       
+                        <td class="rateTd" *ngIf="ReservedCar.isOver && ReservedCar.mark == 0">
+                            <span class="td"> Rate this car: </span> <br>
+                            <star-rating value=0 totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="false" (rate)="rateCar($event, ReservedCar.car)"></star-rating>
+                        </td>
+                        <td class="rateTd" *ngIf="ReservedCar.isOver && ReservedCar.mark != 0" >
+                            <span class="td">  Your rate for this car: </span> <br>
+                            <star-rating value={{ReservedCar.mark}} totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="true"></star-rating>
+                        </td>
+
+
+                    </tr>
+                </tbody> 
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+<app-nav-menu></app-nav-menu>
+
+<div class="mainDiv">
+    <button  class="button" routerLink="/admin-add-flight">Add flight</button>
+
+    <table  class="table table-hover" >
+        <thead>
+            <tr>
+                <th class="th-info">Depart:</th>
+                <th class="th-info">Landing:</th>
+                <th class="th-info">Transit:</th>
+                <th class="th-info">Duration:</th>
+                <th class="th-info">Price:</th>
+                <th></th>
+                <th></th>
+                <th></th>
+        
+            </tr>
+        </thead>
+        <tbody >
+            <tr *ngFor="let flight of Flights">
+                <td class="td-info">{{flight.flyingfrom}} <br> {{flight.dateDepart | date:'dd-MM-yyyy HH:mm' }}</td>
+                <td class="td-info"> {{flight.flyingTo}} <br> {{flight.dateArrival | date:'dd-MM-yyyy HH:mm' }}</td>
+                <td class="td-info"> {{flight.numberTransit}} </td>
+                <td class="td-info"> h:m:s <br> {{flight.flightDuration | date: "H:m:s" }} </td>
+                <td class="td-info">
+                    <span class="price-text">{{flight.ticketPrice}}€</span> <br/>
+                </td>
+                <td>
+                    <div class="profile-stars">
+                        <star-rating value={{flight.mark}} totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="true"></star-rating>
+                    </div>
+                </td>
+                <td >
+                    <button class="buttonModify" type="button"  (click) ="Modify(flight,Flights)">Modify</button>
+                </td>
+                <td>
+                    <button class="buttonRemove"  type="button"  (click)="Remove(flight,Flights)">Remove</button>
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+ 

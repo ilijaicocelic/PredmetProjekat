@@ -1,0 +1,24 @@
+<app-nav-menu></app-nav-menu>
+
+<div class="mainDiv">
+  <button class="buttonAccept" routerLink="/add-rcServis">Add Rent A Car Company</button>
+  <div class="table-wrap">
+    <table class="table table-hover" cellspacing="0" width="70%">
+      <thead>
+        <tr>
+          <th class="th-info">Name</th>
+          <th class="th-info">Admin</th>
+          <th class="th-info">Address</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item1 of AllRentACar">
+          <td class="td-info">{{item1.name}}</td>
+          <td class="td-info">{{item1.adminName}}</td>
+          <td class="td-info">{{item1.address}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>

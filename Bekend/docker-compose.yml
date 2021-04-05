@@ -1,0 +1,39 @@
+version: '3.4'
+
+services:
+  airlineapi:
+    image: ${DOCKER_REGISTRY-}airlineapi
+    build:
+      context: .
+      dockerfile: AirlineApi/Dockerfile
+    depends_on:
+      - mysql-server
+    ports:
+      - "5002:80"
+
+  carserviceapi:
+    image: ${DOCKER_REGISTRY-}carserviceapi
+    build:
+      context: .
+      dockerfile: CarServiceApi/Dockerfile
+    depends_on:
+      - mysql-server
+    ports:
+      - "5001:80"
+
+  mysql-server:
+    image: mysql/mysql-server:5.6
+    ports:
+        - "3306:3306"
+    environment:
+        MYSQL_ROOT_PASSWORD: "DatabasePassword!123"
+        MYSQL_USER: "user"
+        MYSQL_PASSWORD: "UserPassword!123"
+    volumes:
+      - database:/var/lib/mysql
+  
+
+
+volumes:
+  database:
+

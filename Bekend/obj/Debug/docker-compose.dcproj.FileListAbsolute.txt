@@ -1,0 +1,10 @@
+C:\Users\icoce\Desktop\Bekend\bin\Debug\appsettings.Development.json
+C:\Users\icoce\Desktop\Bekend\bin\Debug\appsettings.json
+C:\Users\icoce\Desktop\Bekend\bin\Debug\Properties\launchSettings.json
+C:\Users\icoce\Desktop\Bekend\bin\Debug\AirlineApi.dll
+C:\Users\icoce\Desktop\Bekend\bin\Debug\CarServiceApi.dll
+C:\Users\icoce\Desktop\Bekend\bin\Debug\AirlineApi.pdb
+C:\Users\icoce\Desktop\Bekend\bin\Debug\CarServiceApi.pdb
+C:\Users\icoce\Desktop\Bekend\obj\Debug\docker-compose.dcprojAssemblyReference.cache
+C:\Users\icoce\Desktop\Bekend\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+C:\Users\icoce\Desktop\Bekend\obj\Debug\docker-compose.dcproj.CopyComplete

@@ -1,0 +1,35 @@
+<hr/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<h5  class="booking-cta" >Search results:</h5>
+
+<div class="filterDiv">
+    <label for="rrange" style="display: inline-block;">Price Filter:</label> <br>
+    <label for="rrange" style="display: inline-block;">Price:</label>&nbsp;
+    <label id="price" for="rrange" style="display: inline-block;">500</label>
+    <input style="width: 100%;display: block;" id="rrange" type="range" class="rang" value={{price}} min="0" max="1000" (input)="ChangeText($event.target.value)" (change)="filterPrice()"/>
+</div>
+<table  class="table table-hover">
+    <thead>
+        <tr class="booking-cta">
+            <th >Depart:</th>
+            <th >Landing:</th>
+            <th >Transit:</th>
+            <th >Duration:</th>
+
+        </tr>
+    </thead>
+    <tbody >
+        <tr *ngFor="let flight of filteredFlights">
+            <td>{{flight.flyingfrom}} <br> {{flight.dateDepart | date:'dd/MM/yyyy HH:mm' }}</td>
+            <td> {{flight.flyingTo}} <br> {{flight.dateArrival | date:'dd/MM/yyyy HH:mm' }}</td>
+            <td> {{flight.numberTransit}} </td>
+            <td> h:m:s <br> {{flight.flightDuration | date: "H:m:s" }} </td>
+            <td>
+                Price:<span class="price-text">{{flight.ticketPrice}}€</span> <br/>
+                <button (click) ="SelectFlight(flight)" class="button1">
+                  Select
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

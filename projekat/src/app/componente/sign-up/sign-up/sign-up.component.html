@@ -1,0 +1,30 @@
+<app-nav-menu></app-nav-menu>
+
+<div id="login-box">
+  <div class="left">
+    <h1>Sign up</h1>
+    <form (ngSubmit)="SignUp.form.valid" #SignUp = "ngForm" >
+      <input type="text" [(ngModel)]="name" name="name" placeholder="Name" />
+      <input type="text" [(ngModel)]="surname" name="surname" placeholder="Surname"  />
+      <input type="text" [(ngModel)]="username" name="username" placeholder="Username"  />
+      <input type="number" [(ngModel)]="phone" name="phone" placeholder="Mobile Phone"  />
+      <input type="text" [(ngModel)]="address" name="address" placeholder="Address"/>
+      <input type="email" [(ngModel)]="email" ngModel pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  name="email" placeholder="E-mail" required>
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Password"/>
+      <input type="password" [(ngModel)]="password2" name="password2" placeholder="Repeat Password" />
+      
+      
+      <button class="social-signin twitter" (click)="onSubmit()" >Sign Up</button> 
+
+    </form>  
+  </div>
+  
+  <div class="right">
+    <span class="loginwith">Sign in with<br />social network</span>
+    
+    <button class="social-signin facebook">Log in with facebook</button>
+    <button class="social-signin twitter">Log in with Twitter</button>
+    <button class="social-signin google">Log in with Google+</button>
+  </div>
+  <div class="or">OR</div>
+</div>

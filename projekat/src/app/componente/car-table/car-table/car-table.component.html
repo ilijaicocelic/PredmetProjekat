@@ -1,0 +1,38 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    
+<div class="filterDiv" style="height: 80px;">
+    <label for="rrange" style="display: inline-block;">Price Filter:</label> <br>
+    <label for="rrange" style="display: inline-block;">Price:</label>&nbsp;
+    <label id="price" for="rrange" style="display: inline-block;">500</label>
+    <input style="width: 40%;display: block;" id="rrange" type="range" class="rang" value={{price}} min="0" max="500"
+    (input)="ChangeText($event.target.value)" (change)="filterPrice()"/>
+</div>
+
+<h5  class="booking-ctar" >Search results</h5>
+
+<table class="table table-hover">
+    <thead class="booking-cta">
+        <tr>
+            <th scope="col">Pick Up Place:</th>
+            <th scope="col"> Brand:</th>
+            <th scope="col">Model:</th>
+            <th scope="col">Year:</th>
+            <th scope="col">Price Per Day </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="results">
+        <tr *ngFor="let car of filteredCars">
+            <td>{{car.location}} <br>{{car.address}}</td>
+            <td>{{car.brand}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.year}}</td>
+            <td>{{car.pricePerDay}}</td>   
+            <td><button  type="button" (click) ="Reserve(car)" class="buttonModify" >Reserve </button></td>  
+
+            
+        </tr>
+    </tbody>
+</table>

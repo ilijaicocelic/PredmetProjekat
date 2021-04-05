@@ -1,0 +1,188 @@
+
+  .button {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 170px;
+    height: 50px;
+    margin-left: 82%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0cf;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .button:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #008fb3;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .button:hover {
+    color: #fff;
+  }
+  .button:hover:before {
+    width: 100%;
+  }
+  
+  
+
+  .buttonModify {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 140px;
+    height: 45px;
+    margin-left: 10%;
+    margin-top: 3%;
+  }
+  .buttonModify:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0cf;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .buttonModify:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #008fb3;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .buttonModify:hover {
+    color: #fff;
+  }
+  .buttonModify:hover:before {
+    width: 100%;
+  }
+
+
+
+  .buttonRemove {
+    display: inline-block;
+    padding: .75rem 1.25rem;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 140px;
+    height: 45px;
+    margin-left: 10%;
+    margin-top: 3%;
+  }
+  .buttonRemove:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 100, 100);
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .buttonRemove:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #ce2020;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .buttonRemove:hover {
+    color: #fff;
+  }
+  .buttonRemove:hover:before {
+    width: 100%;
+  }
+
+  
+.td-info{
+	font-size: 16px;
+	font-weight: bold;
+	text-align: center;
+	padding: 15px;
+}
+
+.th-info{
+	font-size:large;
+	font-weight: bold;
+  text-align: center;
+}
+
+
+tr:nth-child(even) {background-color:#a5c6fa;}
+
+.table{
+   width: 80%;
+   margin-left: 10%;
+   border-collapse: collapse;
+   background-color:  #ccdffd;
+}
+thead{
+	background-color: #89b6ff;
+}
+
+.mainDiv{
+  background: #6ca1f1;
+  height: 100%;
+  margin-top: 0%;
+}
+
+.price-text{
+  font-size: 25px;
+  font-weight: bold;
+	text-align: center;
+  
+}
+

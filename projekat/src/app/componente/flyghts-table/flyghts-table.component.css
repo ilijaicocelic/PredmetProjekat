@@ -1,0 +1,47 @@
+.filterDiv{
+	width: 250px;
+	height: 100px;
+	background-color: white;
+}
+
+
+.booking-cta {
+	font-size: 16px;
+	text-transform: uppercase;
+	color:  #0066ff;
+    font-weight: 100;
+    text-align: center;
+}
+
+.btndestinfo{
+	color: white;
+	background-color:#0066ff;
+	height: 25px;
+	font-size: 4px;
+    border: none;
+    text-align: center;
+	
+	border-radius: 1px;
+	text-transform: uppercase
+}
+
+.price-text{
+	font-size: 24px;
+	font-family: "cerapro-bold",sans-serif;
+	font-weight: 700;
+	line-height: 28px;
+}
+tr:nth-child(even) {background-color: #a5c6fa;}
+
+.button1{
+	
+	display: flex;
+	
+	text-align: center;
+	
+	height: 30px;
+	width: 70%;
+	border-radius: 3px;
+	color: #fff;
+	background-color: var(--bpk-button-primary-background-color,#00a698);
+}

@@ -1,0 +1,30 @@
+
+<app-nav-menu></app-nav-menu>
+
+
+<div class="mainDiv">
+  <h5  class="booking-cta">Infos about the cars</h5>
+  <table  class="table table-hover">
+    
+    <tr>
+      
+      <th class="th-info" >Pickup Location:</th>
+      <th class="th-info" >Car type: </th>
+      <th class="th-info" >Car model: </th>
+      <th class="th-info" >Year of production:</th>
+      <th class="th-info" >Price Per Day:</th>
+      
+    </tr>
+    
+    <tr *ngFor="let car of foundCars">
+    
+      <td class="td-info" >{{car.location}}</td>
+      <td  class="td-info">{{car.brand}} </td>  
+      <td  class="td-info">{{car.model}}</td>
+      <td  class="td-info"> {{car.year}} year</td>
+      <td  class="td-info">{{car.pricePerDay}} $</td>
+    
+    </tr>
+  </table>
+</div>
+ 

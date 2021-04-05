@@ -1,0 +1,161 @@
+.booking-cta {
+	font-size: 16px;
+	text-transform: uppercase;
+	color: #4fa3e3;
+    font-weight: 100;
+	text-align: center;
+	
+}
+.table-wrap {
+  height: 660px;
+  width: 70%;
+  margin-left: 200px;
+  overflow-y: scroll;
+}
+
+tr:nth-child(even) {background-color:#a5c6fa;}
+
+.table{
+	 width: 100%;
+   border-collapse: collapse;
+   background-color:  #ccdffd;
+   overflow-y: scroll
+}
+tr{
+	border: solid thin;
+	border-color: blue;
+}
+.mainDiv{
+  background: #6ca1f1;
+  height: 100%;
+}
+
+thead{
+	background-color: #89b6ff;
+}
+
+th
+{
+    cursor: pointer;
+}
+
+
+
+.buttonAccept {
+    display: inline-block;
+    
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: small;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 90px;
+    height: 50px;
+    margin-left: 0%;
+  }
+  .buttonAccept:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0cf;
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .buttonAccept:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #008fb3;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .buttonAccept:hover {
+    color: #fff;
+  }
+  
+  .buttonAccept:hover:before {
+    width: 100%;
+  }
+
+
+
+  .buttonReject {
+    display: inline-block;
+   
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size:  small;
+    letter-spacing: .15rem;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+	width: 90px;
+    height: 50px;
+    margin-left: 4px;
+  }
+  .buttonReject:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 100, 100);
+    border-radius: 10rem;
+    z-index: -2;
+  }
+  .buttonReject:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #ce2020;
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+  .buttonReject:hover {
+    color: #fff;
+  }
+  .buttonReject:hover:before {
+    width: 100%;
+  }
+
+  .td-buttons{
+    width: 20%;
+    padding-top: 1.5%;
+  }
+
+.td-info{
+	font-size: 23px;
+	font-weight: bold;
+	text-align: center;
+	padding: 25px;
+}
+
+.th-info{
+	font-size:large;
+	font-weight: bold;
+  text-align: center;
+}
+
+.avatar {
+	width: 140px;
+	height: 70px;
+	margin-left: 30%;
+  }

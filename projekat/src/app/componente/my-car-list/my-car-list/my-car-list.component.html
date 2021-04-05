@@ -1,0 +1,50 @@
+
+<app-nav-menu></app-nav-menu>
+
+
+<button  class="button" routerLink="/admin-add-car">Add car</button>
+
+<table class="responstable">
+  
+  <tr>
+    <th>ID:</th>
+    <th ><span>Pickup Location:</span></th>
+    <th>Car type and year od Production:</th>
+    <th>Price Per Day:</th>
+    <th></th>
+    <th>Is Booked:</th>
+    <th></th>
+    <th></th>
+    <th></th>
+    
+  </tr>
+  
+  <tr *ngFor="let car of allcars">
+    <td>{{car.id}}</td>
+    <td>{{car.location}} , {{car.address}}</td>
+    <td>{{car.brand}} {{car.model}}, {{car.year}} year.</td>  
+    <td>{{car.pricePerDay}} $</td>
+    <td style="width: 180px;">
+      <div class="profile-stars">
+          <star-rating value={{car.mark}} totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="true"></star-rating>
+      </div>
+   </td>
+    <td *ngIf="car.currentlyAvailable; else elseBlock"> Yes</td>
+
+    <ng-template #elseBlock>
+        <td>No</td>
+    </ng-template>
+
+    <td >
+        <button  type="button" class="buttonModify" routerLink="/admin-add-car/{{car.id}}" >Modify</button>
+    </td>
+    <td>
+        <button  type="button" class="buttonRemove" (click)="Remove(car)">Remove</button>
+    </td>
+    <td>
+      <button  type="button" class="buttonModify" (click)="AddFastReservation(car)">Fast Reservation</button>
+    </td>
+    
+  </tr>
+  
+ 

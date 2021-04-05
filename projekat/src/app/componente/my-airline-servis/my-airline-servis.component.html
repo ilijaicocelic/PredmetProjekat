@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+
+<app-nav-menu></app-nav-menu>
+
+<div  class="sectiondiv">
+    <div class="row">
+      <h3 class="th-info">Servis Info</h3>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="row">
+          <div class="profile-stars">
+            <star-rating value={{airline.mark}} totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="45px" readonly="true"></star-rating>
+          </div>
+        </div>
+        <div class="row">
+           <img src="../../../../assets/images/avioCompany.png" alt="Avatar" class="avatar">
+        </div>
+      </div>
+
+      <div class="col-md-6" style="margin-top: 4%;">
+        <form >
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label">Servis Name:</label>
+            </div>
+            <div class="col-md-5">           
+              <input  class="input" [(ngModel)]="airline.name" placeholder="" name="Name" type="text">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label">Address:</label>
+            </div>
+            <div class="col-md-5">            
+              <input  class="input" [(ngModel)]="airline.address" placeholder="" name="address" type="text">
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-4">
+              <label class="label">Description:</label>
+            </div>
+            <div class="col-md-5">
+              <input  class="input" [(ngModel)]="airline.description" placeholder="" name="description" type="text">            
+            </div>
+          </div>
+    
+    
+          
+          <div class="row">
+            <div class="col-md-9">
+              <button type="button" class="buttonAccept"  (click)="ChangeInfos()" >Change Infos</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>

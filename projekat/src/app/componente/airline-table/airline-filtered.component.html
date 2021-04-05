@@ -1,0 +1,48 @@
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<app-nav-menu></app-nav-menu> 
+
+
+<div class="mainDiv">
+    <h5  class="booking-cta" >Lists of airlines:</h5>
+    <table  class="table table-hover">
+        <thead>
+            <tr>
+                <th class="th-info" scope="col">Name:</th>
+                <th class="th-info" scope="col">Address:</th>
+                <th class="th-info" scope="col">Description:</th>
+                <th class="th-info" scope="col">Mark:</th>
+                <th class="th-info" scope="col">Destinations info:</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let airline of allAirline">
+                <td class="td-info">{{airline.name}}</td>
+                <td class="td-info">{{airline.address}}</td>
+                <td class="description-info">
+                    <!-- Prenos id-ja kao parametra putanje komponenti -->
+                   <!--  <button class="buttonAccept" (click) ="OnSubmit(airline)">
+                        Read more...
+                    </button> -->
+                    <label class="description-label"> {{airline.description}}</label>
+                  
+                </td>
+                <td class="td-info">
+                    <div class="profile-stars">
+                        <star-rating value={{airline.mark}} totalstars={{totalstar}} checkedcolor="gold" uncheckedcolor="gray" size="30px" readonly="true"></star-rating>
+                    </div>
+                </td>
+                <td>
+                    <!-- Prenos id-ja kao parametra putanje komponenti -->
+                    <button class="buttonAccept" (click) = "DestDugme(airline)">
+                            Destinations info...
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+</div>

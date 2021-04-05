@@ -1,0 +1,69 @@
+<app-nav-menu></app-nav-menu>
+
+    <div class="container">
+
+
+      <label><b>Location</b></label>
+      <input [(ngModel)]="Location" type="text" name="Location" placeholder="Location"  required>
+ 
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="form-group">
+          <label ><b>Price per day:</b></label>
+            <input [(ngModel)]="PricePerDay" placeholder="Price in $" name="PricePerDay" type="number">
+          
+            </div>
+        </div>
+
+       
+          <div class="col-md-3">
+            <div class="form-group">
+            <label ><b>No. of seats:</b></label>
+              <input [(ngModel)]="NumberOfSeats" placeholder="" name="NumberOfSeats" type="number">
+            
+              </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-group">
+            <label ><b>Year:</b></label>
+              <input [(ngModel)]="year" placeholder="" name="year" type="number">
+            
+              </div>
+          </div>
+
+          <div class="col-md-3">
+            <div class="form-group">
+            <label ><b>No. Babyseats:</b></label>
+              <input [(ngModel)]="Babyseats" placeholder="" name="Babyseats" type="number">
+            
+              </div>
+          </div>
+
+          
+          
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+            <label ><b>Brand:</b></label>
+              <input [(ngModel)]="Brand" placeholder="" name="Brand" type="text">
+            
+              </div>
+          </div> 
+          <div class="col-md-3">
+            <div class="form-group">
+            <label><b>Car model:</b></label>
+              <input [(ngModel)]="CarModel" placeholder="" name="CarModel" type="text">
+            
+              </div>
+          </div>   
+         
+      </div>
+      <hr> 
+      
+      <button type="submit" class="registerbtn" (click) = "AddNewCar()">Submit</button>
+    </div>
+  

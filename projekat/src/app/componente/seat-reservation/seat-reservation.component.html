@@ -1,0 +1,48 @@
+<div>
+    <main class="innerContainer">
+        <div class="header">
+            <h3 class="headerTitle">{{flies}}</h3>
+            <div class="headerTitle">BOOK YOUR SEATS! </div>
+        </div>
+
+        <!-- Showing a static legend bar -->
+        <div class="legend">
+            <span class="glyphicon glyphicon-stop freeSeat"></span> FREE
+            <span class="glyphicon glyphicon-ban-circle reservedSeat padding-left"></span> TAKEN
+            <span class="glyphicon glyphicon-ok-sign selectedSeat padding-left"></span> SELECTED                
+        </div>
+
+        <br/>
+        <div class="screen"></div>
+        <!-- Generate the seating grid -->
+        <div *ngFor="let row of rows">
+            <span class="rows">{{row}}</span>
+            <span class="seat" *ngFor="let col of cols" (click)="seatClicked(row + col)" 
+                    [ngSwitch]="getStatus(row + col)">
+                <span *ngSwitchCase="'selected'" class="glyphicon glyphicon-ok-sign selectedSeat"></span>
+                <span *ngSwitchCase="'reserved'" class="glyphicon glyphicon-ban-circle reservedSeat"></span>
+                <span *ngSwitchDefault class="glyphicon glyphicon-stop freeSeat"></span>
+            </span>
+            <span *ngIf="row=='C'">
+                <br/> <br/> <br/> 
+                
+            </span>
+           
+        </div>
+        <br/>
+
+        <!-- Structural directive - only visible on selection -->
+        <div style="text-align: right; margin-right: 220px;">
+            <div class="legend">SEATS SELECTED : <br/> {{selected.toString()}} </div>
+            <div>
+                PRICE : {{ticketPrice}} * {{selected.length}} = {{ticketPrice*selected.length}} €
+            </div>
+        </div>
+        <br/>
+        <!-- Action buttons -->
+        <div style="width: 100%;">
+            <button (click)="Back()" class="btnClear">Back</button>
+            <button mat-reised-button  (click)="showSelected()"  class="btnBuy">Buy Tickets</button>
+        </div>        
+    </main>     
+</div>
